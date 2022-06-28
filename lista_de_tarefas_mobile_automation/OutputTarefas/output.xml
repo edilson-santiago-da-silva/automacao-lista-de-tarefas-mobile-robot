@@ -1,0 +1,1124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.9.7 on win32)" generated="20220416 20:29:06.664" rpa="false" schemaversion="3">
+<suite id="s1" name="Lista De Tarefas Test" source="G:\Meu Drive\CursoUdemy\RobotFramework.python\test_app_lista_de_tarefas\Test_listas_de_tarefas\lista_de_tarefas_test.robot">
+<test id="s1-t1" name="Caso de Teste 01 - Abrir aplicativo" line="7">
+<kw name="Abrir o aplicativo" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:08.180" level="TRACE">Arguments: [  ]</msg>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=emulator-5554</arg>
+<arg>appPackage=com.splendapps.splendo</arg>
+<arg>appActivity=com.splendapps.splendo.MainActivity</arg>
+<arg>automationName=Uiautomator2</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20220416 20:29:08.181" level="TRACE">Arguments: [ 'http://localhost:4723/wd/hub' | platformName='Android' | deviceName='emulator-5554' | appPackage='com.splendapps.splendo' | appActivity='com.splendapps.splendo.MainActivity' | automationName='Uiautomator2' ]</msg>
+<msg timestamp="20220416 20:29:10.227" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session {"capabilities": {"firstMatch": [{"platformName": "Android", "appium:deviceName": "emulator-5554", "appium:appPackage": "com.splendapps.splendo", "appium:appActivity": "com.splendapps.splendo.MainActivity", "appium:automationName": "Uiautomator2"}]}, "desiredCapabilities": {"platformName": "Android", "deviceName": "emulator-5554", "appPackage": "com.splendapps.splendo", "appActivity": "com.splendapps.splendo.MainActivity", "automationName": "Uiautomator2"}}</msg>
+<msg timestamp="20220416 20:29:10.303" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:4723</msg>
+<msg timestamp="20220416 20:29:18.842" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session HTTP/1.1" 200 938</msg>
+<msg timestamp="20220416 20:29:18.843" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:18.846" level="DEBUG">Opened application with session id 1d8a6642-7bb1-42ed-be2c-2215cee7d3dd</msg>
+<msg timestamp="20220416 20:29:18.847" level="TRACE">Return: 1</msg>
+<status status="PASS" starttime="20220416 20:29:08.181" endtime="20220416 20:29:18.847"/>
+</kw>
+<msg timestamp="20220416 20:29:18.847" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:08.180" endtime="20220416 20:29:18.848"/>
+</kw>
+<doc>Esse teste abre o aplicativo de lista de tarefas</doc>
+<tag>Abrir_app</tag>
+<status status="PASS" starttime="20220416 20:29:08.179" endtime="20220416 20:29:18.859"/>
+</test>
+<test id="s1-t2" name="Caso de Teste 02 - Criando a primeira tarefa" line="12">
+<kw name="Dado que estou na tela inicial do app" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:18.863" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${BOTAO_ADICIONAR_TAREFA}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:18.864" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabAddTask' ]</msg>
+<msg timestamp="20220416 20:29:18.864" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:19.272" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:19.273" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:19.273" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000019/displayed {"id": "00000000-0000-0191-7fff-ffff00000019"}</msg>
+<msg timestamp="20220416 20:29:19.326" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000019/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:19.327" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:19.327" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:18.864" endtime="20220416 20:29:19.327"/>
+</kw>
+<msg timestamp="20220416 20:29:19.327" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:18.863" endtime="20220416 20:29:19.327"/>
+</kw>
+<kw name="Quando clicar no botao de adicionar a 1º tarefa &quot;PRATICAR INGLÊS&quot;" library="lista_de_tarefas_resources" sourcename="Quando clicar no botao de adicionar a 1º tarefa &quot;${TAREFA1}&quot;">
+<msg timestamp="20220416 20:29:19.328" level="TRACE">Arguments: [ ${TAREFA1}='PRATICAR INGLÊS' ]</msg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${BOTAO_ADICIONAR_TAREFA}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:19.329" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabAddTask' ]</msg>
+<msg timestamp="20220416 20:29:19.332" level="INFO">Clicking element 'id=com.splendapps.splendo:id/fabAddTask'.</msg>
+<msg timestamp="20220416 20:29:19.332" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:19.459" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:19.459" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:19.460" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000019/click {"id": "00000000-0000-0191-7fff-ffff00000019"}</msg>
+<msg timestamp="20220416 20:29:19.593" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000019/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:19.594" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:19.594" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:19.329" endtime="20220416 20:29:19.594"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/edtTaskName</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:19.595" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/edtTaskName' ]</msg>
+<msg timestamp="20220416 20:29:19.597" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/edtTaskName"}</msg>
+<msg timestamp="20220416 20:29:19.662" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:19.662" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:19.876" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/edtTaskName"}</msg>
+<msg timestamp="20220416 20:29:20.396" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:20.396" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:20.609" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/edtTaskName"}</msg>
+<msg timestamp="20220416 20:29:21.827" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:21.828" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:21.828" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0192-7fff-ffff00000042/displayed {"id": "00000000-0000-0192-7fff-ffff00000042"}</msg>
+<msg timestamp="20220416 20:29:21.878" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0192-7fff-ffff00000042/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:21.878" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:21.878" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:19.595" endtime="20220416 20:29:21.879"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/edtTaskName</arg>
+<arg>text=${TAREFA1}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:21.880" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/edtTaskName' | text='PRATICAR INGLÊS' ]</msg>
+<msg timestamp="20220416 20:29:21.886" level="INFO">Typing text 'PRATICAR INGLÊS' into text field 'id=com.splendapps.splendo:id/edtTaskName'</msg>
+<msg timestamp="20220416 20:29:21.886" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/edtTaskName"}</msg>
+<msg timestamp="20220416 20:29:21.942" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:21.944" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:21.945" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0192-7fff-ffff00000042/value {"text": "PRATICAR INGL\u00caS", "value": ["P", "R", "A", "T", "I", "C", "A", "R", " ", "I", "N", "G", "L", "\u00ca", "S"], "id": "00000000-0000-0192-7fff-ffff00000042"}</msg>
+<msg timestamp="20220416 20:29:22.869" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0192-7fff-ffff00000042/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:22.869" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:22.869" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:21.879" endtime="20220416 20:29:22.869"/>
+</kw>
+<msg timestamp="20220416 20:29:22.870" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:19.328" endtime="20220416 20:29:22.870"/>
+</kw>
+<kw name="E Definir data" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:22.873" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/btnSetD</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:22.874" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/btnSetD' ]</msg>
+<msg timestamp="20220416 20:29:22.875" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/btnSetD"}</msg>
+<msg timestamp="20220416 20:29:23.631" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:23.631" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:23.632" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0192-7fff-ffff00000045/displayed {"id": "00000000-0000-0192-7fff-ffff00000045"}</msg>
+<msg timestamp="20220416 20:29:23.654" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0192-7fff-ffff00000045/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:23.654" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:23.654" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:22.874" endtime="20220416 20:29:23.654"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/btnSetD</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:23.655" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/btnSetD' ]</msg>
+<msg timestamp="20220416 20:29:23.659" level="INFO">Clicking element 'id=com.splendapps.splendo:id/btnSetD'.</msg>
+<msg timestamp="20220416 20:29:23.660" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/btnSetD"}</msg>
+<msg timestamp="20220416 20:29:23.688" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:23.689" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:23.689" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0192-7fff-ffff00000045/click {"id": "00000000-0000-0192-7fff-ffff00000045"}</msg>
+<msg timestamp="20220416 20:29:23.736" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0192-7fff-ffff00000045/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:23.736" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:23.736" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:23.654" endtime="20220416 20:29:23.736"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=android:id/button1</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:23.737" level="TRACE">Arguments: [ 'id=android:id/button1' ]</msg>
+<msg timestamp="20220416 20:29:23.737" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:29:23.843" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:23.844" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:24.055" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:29:25.105" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:25.106" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:25.106" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0193-7fff-ffff0000004e/displayed {"id": "00000000-0000-0193-7fff-ffff0000004e"}</msg>
+<msg timestamp="20220416 20:29:25.146" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0193-7fff-ffff0000004e/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:25.147" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:25.147" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:23.737" endtime="20220416 20:29:25.147"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>locator=//android.view.View[@index="15"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:25.148" level="TRACE">Arguments: [ locator='//android.view.View[@index="15"]' ]</msg>
+<msg timestamp="20220416 20:29:25.151" level="INFO">Clicking element '//android.view.View[@index="15"]'.</msg>
+<msg timestamp="20220416 20:29:25.154" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.view.View[@index=\"15\"]"}</msg>
+<msg timestamp="20220416 20:29:25.883" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:25.883" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:25.883" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0193-0000-001000000050/click {"id": "00000000-0000-0193-0000-001000000050"}</msg>
+<msg timestamp="20220416 20:29:26.515" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0193-0000-001000000050/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:26.516" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:26.517" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:25.148" endtime="20220416 20:29:26.517"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=android:id/button1</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:26.518" level="TRACE">Arguments: [ 'id=android:id/button1' ]</msg>
+<msg timestamp="20220416 20:29:26.522" level="INFO">Clicking element 'id=android:id/button1'.</msg>
+<msg timestamp="20220416 20:29:26.523" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:29:26.584" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:26.584" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:26.584" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0193-7fff-ffff0000004e/click {"id": "00000000-0000-0193-7fff-ffff0000004e"}</msg>
+<msg timestamp="20220416 20:29:26.605" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0193-7fff-ffff0000004e/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:26.605" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:26.606" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:26.517" endtime="20220416 20:29:26.606"/>
+</kw>
+<msg timestamp="20220416 20:29:26.606" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:22.873" endtime="20220416 20:29:26.606"/>
+</kw>
+<kw name="Então mostre a tarefa finalizada" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:26.609" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/fabSaveTask</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:26.609" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabSaveTask' ]</msg>
+<msg timestamp="20220416 20:29:26.610" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabSaveTask"}</msg>
+<msg timestamp="20220416 20:29:26.732" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:26.733" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:26.733" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0192-7fff-ffff00000025/displayed {"id": "00000000-0000-0192-7fff-ffff00000025"}</msg>
+<msg timestamp="20220416 20:29:27.217" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0192-7fff-ffff00000025/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:27.218" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:27.218" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:26.609" endtime="20220416 20:29:27.218"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/fabSaveTask</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:27.219" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabSaveTask' ]</msg>
+<msg timestamp="20220416 20:29:27.222" level="INFO">Clicking element 'id=com.splendapps.splendo:id/fabSaveTask'.</msg>
+<msg timestamp="20220416 20:29:27.222" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabSaveTask"}</msg>
+<msg timestamp="20220416 20:29:27.240" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:27.240" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:27.241" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0192-7fff-ffff00000025/click {"id": "00000000-0000-0192-7fff-ffff00000025"}</msg>
+<msg timestamp="20220416 20:29:27.261" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0192-7fff-ffff00000025/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:27.261" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:27.261" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:27.218" endtime="20220416 20:29:27.261"/>
+</kw>
+<msg timestamp="20220416 20:29:27.261" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:26.608" endtime="20220416 20:29:27.261"/>
+</kw>
+<doc>Esse teste cria a primeira tarefa</doc>
+<tag>tarefa1</tag>
+<status status="PASS" starttime="20220416 20:29:18.861" endtime="20220416 20:29:27.262"/>
+</test>
+<test id="s1-t3" name="Caso de Teste 02 - Criando a segunda tarefa" line="20">
+<kw name="Dado que estou na tela inicial do app" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:27.264" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${BOTAO_ADICIONAR_TAREFA}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:27.265" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabAddTask' ]</msg>
+<msg timestamp="20220416 20:29:27.265" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:27.642" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:27.642" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:27.844" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:29.105" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:29.106" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:29.106" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000082/displayed {"id": "00000000-0000-0191-7fff-ffff00000082"}</msg>
+<msg timestamp="20220416 20:29:29.119" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000082/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:29.119" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:29.119" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:27.264" endtime="20220416 20:29:29.119"/>
+</kw>
+<msg timestamp="20220416 20:29:29.119" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:27.264" endtime="20220416 20:29:29.119"/>
+</kw>
+<kw name="Quando clicar no botao de adicionar a 2º tarefa &quot;PLANEJAR A PRÓXIMA SEMANA&quot;" library="lista_de_tarefas_resources" sourcename="Quando clicar no botao de adicionar a 2º tarefa &quot;${TAREFA2}&quot;">
+<msg timestamp="20220416 20:29:29.121" level="TRACE">Arguments: [ ${TAREFA2}='PLANEJAR A PRÓXIMA SEMANA' ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${BOTAO_ADICIONAR_TAREFA}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:29.121" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabAddTask' ]</msg>
+<msg timestamp="20220416 20:29:29.121" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:29.144" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:29.145" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:29.145" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000082/displayed {"id": "00000000-0000-0191-7fff-ffff00000082"}</msg>
+<msg timestamp="20220416 20:29:29.161" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000082/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:29.161" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:29.161" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:29.121" endtime="20220416 20:29:29.162"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${BOTAO_ADICIONAR_TAREFA}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:29.162" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabAddTask' ]</msg>
+<msg timestamp="20220416 20:29:29.163" level="INFO">Clicking element 'id=com.splendapps.splendo:id/fabAddTask'.</msg>
+<msg timestamp="20220416 20:29:29.163" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:29.195" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:29.195" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:29.196" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000082/click {"id": "00000000-0000-0191-7fff-ffff00000082"}</msg>
+<msg timestamp="20220416 20:29:29.212" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000082/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:29.212" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:29.212" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:29.162" endtime="20220416 20:29:29.212"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>locator=//android.widget.EditText[@index="0"]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:29.213" level="TRACE">Arguments: [ locator='//android.widget.EditText[@index="0"]' ]</msg>
+<msg timestamp="20220416 20:29:29.214" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.widget.EditText[@index=\"0\"]"}</msg>
+<msg timestamp="20220416 20:29:29.569" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:29.570" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:29.775" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.widget.EditText[@index=\"0\"]"}</msg>
+<msg timestamp="20220416 20:29:30.895" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 267</msg>
+<msg timestamp="20220416 20:29:30.895" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:30.895" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0194-7fff-ffff000000bc/displayed {"id": "00000000-0000-0194-7fff-ffff000000bc"}</msg>
+<msg timestamp="20220416 20:29:30.910" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0194-7fff-ffff000000bc/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:30.910" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:30.910" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:29.213" endtime="20220416 20:29:30.910"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>locator=//android.widget.EditText[@index="0"]</arg>
+<arg>text=${TAREFA2}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:30.911" level="TRACE">Arguments: [ locator='//android.widget.EditText[@index="0"]' | text='PLANEJAR A PRÓXIMA SEMANA' ]</msg>
+<msg timestamp="20220416 20:29:30.913" level="INFO">Typing text 'PLANEJAR A PRÓXIMA SEMANA' into text field '//android.widget.EditText[@index="0"]'</msg>
+<msg timestamp="20220416 20:29:30.913" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.widget.EditText[@index=\"0\"]"}</msg>
+<msg timestamp="20220416 20:29:30.966" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 267</msg>
+<msg timestamp="20220416 20:29:30.966" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:30.967" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0194-7fff-ffff000000bc/value {"text": "PLANEJAR A PR\u00d3XIMA SEMANA", "value": ["P", "L", "A", "N", "E", "J", "A", "R", " ", "A", " ", "P", "R", "\u00d3", "X", "I", "M", "A", " ", "S", "E", "M", "A", "N", "A"], "id": "00000000-0000-0194-7fff-ffff000000bc"}</msg>
+<msg timestamp="20220416 20:29:31.842" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0194-7fff-ffff000000bc/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:31.843" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:31.843" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:30.911" endtime="20220416 20:29:31.843"/>
+</kw>
+<msg timestamp="20220416 20:29:31.843" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:29.120" endtime="20220416 20:29:31.843"/>
+</kw>
+<kw name="E Definir data" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:31.845" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/btnSetD</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:31.846" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/btnSetD' ]</msg>
+<msg timestamp="20220416 20:29:31.846" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/btnSetD"}</msg>
+<msg timestamp="20220416 20:29:32.616" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:32.617" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:32.617" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0194-7fff-ffff000000bf/displayed {"id": "00000000-0000-0194-7fff-ffff000000bf"}</msg>
+<msg timestamp="20220416 20:29:32.631" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0194-7fff-ffff000000bf/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:32.632" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:32.632" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:31.845" endtime="20220416 20:29:32.632"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/btnSetD</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:32.633" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/btnSetD' ]</msg>
+<msg timestamp="20220416 20:29:32.634" level="INFO">Clicking element 'id=com.splendapps.splendo:id/btnSetD'.</msg>
+<msg timestamp="20220416 20:29:32.635" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/btnSetD"}</msg>
+<msg timestamp="20220416 20:29:32.653" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:32.654" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:32.654" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0194-7fff-ffff000000bf/click {"id": "00000000-0000-0194-7fff-ffff000000bf"}</msg>
+<msg timestamp="20220416 20:29:32.674" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0194-7fff-ffff000000bf/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:32.675" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:32.675" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:32.633" endtime="20220416 20:29:32.675"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=android:id/button1</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:32.675" level="TRACE">Arguments: [ 'id=android:id/button1' ]</msg>
+<msg timestamp="20220416 20:29:32.676" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:29:32.781" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:32.781" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:32.986" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:29:33.559" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:33.560" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:33.561" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0195-7fff-ffff000000c8/displayed {"id": "00000000-0000-0195-7fff-ffff000000c8"}</msg>
+<msg timestamp="20220416 20:29:33.695" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0195-7fff-ffff000000c8/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:33.695" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:33.695" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:32.675" endtime="20220416 20:29:33.695"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>locator=//android.view.View[@index="15"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:33.696" level="TRACE">Arguments: [ locator='//android.view.View[@index="15"]' ]</msg>
+<msg timestamp="20220416 20:29:33.699" level="INFO">Clicking element '//android.view.View[@index="15"]'.</msg>
+<msg timestamp="20220416 20:29:33.699" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.view.View[@index=\"15\"]"}</msg>
+<msg timestamp="20220416 20:29:33.792" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:33.792" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:33.793" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0195-0000-0010000000ca/click {"id": "00000000-0000-0195-0000-0010000000ca"}</msg>
+<msg timestamp="20220416 20:29:34.423" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0195-0000-0010000000ca/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:34.424" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:34.424" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:33.696" endtime="20220416 20:29:34.424"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=android:id/button1</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:34.425" level="TRACE">Arguments: [ 'id=android:id/button1' ]</msg>
+<msg timestamp="20220416 20:29:34.430" level="INFO">Clicking element 'id=android:id/button1'.</msg>
+<msg timestamp="20220416 20:29:34.430" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:29:34.512" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:34.513" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:34.513" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0195-7fff-ffff000000c8/click {"id": "00000000-0000-0195-7fff-ffff000000c8"}</msg>
+<msg timestamp="20220416 20:29:34.565" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0195-7fff-ffff000000c8/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:34.565" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:34.566" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:34.425" endtime="20220416 20:29:34.566"/>
+</kw>
+<msg timestamp="20220416 20:29:34.566" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:31.844" endtime="20220416 20:29:34.566"/>
+</kw>
+<kw name="Então mostre a tarefa finalizada" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:34.568" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/fabSaveTask</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:34.569" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabSaveTask' ]</msg>
+<msg timestamp="20220416 20:29:34.574" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabSaveTask"}</msg>
+<msg timestamp="20220416 20:29:34.683" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:34.683" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:34.685" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0194-7fff-ffff0000009f/displayed {"id": "00000000-0000-0194-7fff-ffff0000009f"}</msg>
+<msg timestamp="20220416 20:29:35.218" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0194-7fff-ffff0000009f/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:35.219" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:35.219" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:34.569" endtime="20220416 20:29:35.219"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/fabSaveTask</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:35.220" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabSaveTask' ]</msg>
+<msg timestamp="20220416 20:29:35.224" level="INFO">Clicking element 'id=com.splendapps.splendo:id/fabSaveTask'.</msg>
+<msg timestamp="20220416 20:29:35.224" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabSaveTask"}</msg>
+<msg timestamp="20220416 20:29:35.247" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:35.248" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:35.248" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0194-7fff-ffff0000009f/click {"id": "00000000-0000-0194-7fff-ffff0000009f"}</msg>
+<msg timestamp="20220416 20:29:35.263" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0194-7fff-ffff0000009f/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:35.263" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:35.263" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:35.220" endtime="20220416 20:29:35.263"/>
+</kw>
+<msg timestamp="20220416 20:29:35.263" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:34.568" endtime="20220416 20:29:35.263"/>
+</kw>
+<doc>Esse teste cria a segunda tarefa</doc>
+<tag>tarefa2</tag>
+<status status="PASS" starttime="20220416 20:29:27.263" endtime="20220416 20:29:35.264"/>
+</test>
+<test id="s1-t4" name="Caso de Teste 03 - Criando a terceira tarefa" line="28">
+<kw name="Dado que estou na tela inicial do app" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:35.268" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${BOTAO_ADICIONAR_TAREFA}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:35.269" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabAddTask' ]</msg>
+<msg timestamp="20220416 20:29:35.269" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:35.945" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:35.945" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:36.150" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:37.025" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:37.026" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:37.026" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000109/displayed {"id": "00000000-0000-0191-7fff-ffff00000109"}</msg>
+<msg timestamp="20220416 20:29:37.039" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000109/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:37.040" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:37.040" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:35.269" endtime="20220416 20:29:37.040"/>
+</kw>
+<msg timestamp="20220416 20:29:37.040" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:35.268" endtime="20220416 20:29:37.040"/>
+</kw>
+<kw name="Quando clicar no botao de adicionar a 3º tarefa &quot;TESTES FUNCIONAIS&quot;" library="lista_de_tarefas_resources" sourcename="Quando clicar no botao de adicionar a 3º tarefa &quot;${TAREFA3}&quot;">
+<msg timestamp="20220416 20:29:37.041" level="TRACE">Arguments: [ ${TAREFA3}='TESTES FUNCIONAIS' ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${BOTAO_ADICIONAR_TAREFA}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:37.042" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabAddTask' ]</msg>
+<msg timestamp="20220416 20:29:37.042" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:37.064" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:37.065" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:37.065" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000109/displayed {"id": "00000000-0000-0191-7fff-ffff00000109"}</msg>
+<msg timestamp="20220416 20:29:37.078" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000109/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:37.079" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:37.079" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:37.042" endtime="20220416 20:29:37.079"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${BOTAO_ADICIONAR_TAREFA}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:37.080" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabAddTask' ]</msg>
+<msg timestamp="20220416 20:29:37.082" level="INFO">Clicking element 'id=com.splendapps.splendo:id/fabAddTask'.</msg>
+<msg timestamp="20220416 20:29:37.083" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:37.101" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:37.102" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:37.102" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000109/click {"id": "00000000-0000-0191-7fff-ffff00000109"}</msg>
+<msg timestamp="20220416 20:29:37.123" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000109/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:37.124" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:37.124" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:37.079" endtime="20220416 20:29:37.124"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>locator=//android.widget.EditText[@index="0"]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:37.125" level="TRACE">Arguments: [ locator='//android.widget.EditText[@index="0"]' ]</msg>
+<msg timestamp="20220416 20:29:37.125" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.widget.EditText[@index=\"0\"]"}</msg>
+<msg timestamp="20220416 20:29:37.250" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:37.251" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:37.456" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.widget.EditText[@index=\"0\"]"}</msg>
+<msg timestamp="20220416 20:29:38.721" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 267</msg>
+<msg timestamp="20220416 20:29:38.721" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:38.722" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0196-7fff-ffff0000013d/displayed {"id": "00000000-0000-0196-7fff-ffff0000013d"}</msg>
+<msg timestamp="20220416 20:29:38.735" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0196-7fff-ffff0000013d/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:38.736" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:38.736" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:37.125" endtime="20220416 20:29:38.736"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>locator=//android.widget.EditText[@index="0"]</arg>
+<arg>text=${TAREFA3}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:38.737" level="TRACE">Arguments: [ locator='//android.widget.EditText[@index="0"]' | text='TESTES FUNCIONAIS' ]</msg>
+<msg timestamp="20220416 20:29:38.740" level="INFO">Typing text 'TESTES FUNCIONAIS' into text field '//android.widget.EditText[@index="0"]'</msg>
+<msg timestamp="20220416 20:29:38.741" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.widget.EditText[@index=\"0\"]"}</msg>
+<msg timestamp="20220416 20:29:38.806" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 267</msg>
+<msg timestamp="20220416 20:29:38.806" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:38.806" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0196-7fff-ffff0000013d/value {"text": "TESTES FUNCIONAIS", "value": ["T", "E", "S", "T", "E", "S", " ", "F", "U", "N", "C", "I", "O", "N", "A", "I", "S"], "id": "00000000-0000-0196-7fff-ffff0000013d"}</msg>
+<msg timestamp="20220416 20:29:39.699" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0196-7fff-ffff0000013d/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:39.699" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:39.700" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:38.736" endtime="20220416 20:29:39.700"/>
+</kw>
+<msg timestamp="20220416 20:29:39.700" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:37.041" endtime="20220416 20:29:39.700"/>
+</kw>
+<kw name="E Definir data" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:39.702" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/btnSetD</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:39.703" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/btnSetD' ]</msg>
+<msg timestamp="20220416 20:29:39.704" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/btnSetD"}</msg>
+<msg timestamp="20220416 20:29:40.438" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:40.438" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:40.439" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0196-7fff-ffff00000140/displayed {"id": "00000000-0000-0196-7fff-ffff00000140"}</msg>
+<msg timestamp="20220416 20:29:40.450" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0196-7fff-ffff00000140/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:40.450" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:40.450" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:39.703" endtime="20220416 20:29:40.450"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/btnSetD</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:40.450" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/btnSetD' ]</msg>
+<msg timestamp="20220416 20:29:40.452" level="INFO">Clicking element 'id=com.splendapps.splendo:id/btnSetD'.</msg>
+<msg timestamp="20220416 20:29:40.452" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/btnSetD"}</msg>
+<msg timestamp="20220416 20:29:40.469" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:40.469" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:40.469" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0196-7fff-ffff00000140/click {"id": "00000000-0000-0196-7fff-ffff00000140"}</msg>
+<msg timestamp="20220416 20:29:40.486" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0196-7fff-ffff00000140/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:40.487" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:40.487" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:40.450" endtime="20220416 20:29:40.487"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=android:id/button1</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:40.487" level="TRACE">Arguments: [ 'id=android:id/button1' ]</msg>
+<msg timestamp="20220416 20:29:40.488" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:29:40.598" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:40.601" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:40.816" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:29:41.349" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:41.349" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:41.350" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0197-7fff-ffff00000149/displayed {"id": "00000000-0000-0197-7fff-ffff00000149"}</msg>
+<msg timestamp="20220416 20:29:41.359" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0197-7fff-ffff00000149/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:41.359" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:41.360" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:40.487" endtime="20220416 20:29:41.360"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>locator=//android.view.View[@index="15"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:41.360" level="TRACE">Arguments: [ locator='//android.view.View[@index="15"]' ]</msg>
+<msg timestamp="20220416 20:29:41.361" level="INFO">Clicking element '//android.view.View[@index="15"]'.</msg>
+<msg timestamp="20220416 20:29:41.362" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.view.View[@index=\"15\"]"}</msg>
+<msg timestamp="20220416 20:29:41.453" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:41.454" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:41.454" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0197-0000-00100000014b/click {"id": "00000000-0000-0197-0000-00100000014b"}</msg>
+<msg timestamp="20220416 20:29:42.074" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0197-0000-00100000014b/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:42.075" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:42.075" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:41.360" endtime="20220416 20:29:42.075"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=android:id/button1</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:42.075" level="TRACE">Arguments: [ 'id=android:id/button1' ]</msg>
+<msg timestamp="20220416 20:29:42.078" level="INFO">Clicking element 'id=android:id/button1'.</msg>
+<msg timestamp="20220416 20:29:42.078" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:29:42.134" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:42.135" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:42.135" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0197-7fff-ffff00000149/click {"id": "00000000-0000-0197-7fff-ffff00000149"}</msg>
+<msg timestamp="20220416 20:29:42.153" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0197-7fff-ffff00000149/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:42.153" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:42.153" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:42.075" endtime="20220416 20:29:42.153"/>
+</kw>
+<msg timestamp="20220416 20:29:42.154" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:39.702" endtime="20220416 20:29:42.154"/>
+</kw>
+<kw name="Então mostre a tarefa finalizada" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:42.155" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/fabSaveTask</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:42.155" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabSaveTask' ]</msg>
+<msg timestamp="20220416 20:29:42.156" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabSaveTask"}</msg>
+<msg timestamp="20220416 20:29:42.240" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:42.241" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:42.242" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0196-7fff-ffff00000120/displayed {"id": "00000000-0000-0196-7fff-ffff00000120"}</msg>
+<msg timestamp="20220416 20:29:42.768" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0196-7fff-ffff00000120/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:42.768" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:42.769" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:42.155" endtime="20220416 20:29:42.769"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/fabSaveTask</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:42.769" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabSaveTask' ]</msg>
+<msg timestamp="20220416 20:29:42.771" level="INFO">Clicking element 'id=com.splendapps.splendo:id/fabSaveTask'.</msg>
+<msg timestamp="20220416 20:29:42.771" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabSaveTask"}</msg>
+<msg timestamp="20220416 20:29:42.792" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:42.793" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:42.793" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0196-7fff-ffff00000120/click {"id": "00000000-0000-0196-7fff-ffff00000120"}</msg>
+<msg timestamp="20220416 20:29:42.810" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0196-7fff-ffff00000120/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:42.810" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:42.810" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:42.769" endtime="20220416 20:29:42.810"/>
+</kw>
+<msg timestamp="20220416 20:29:42.811" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:42.154" endtime="20220416 20:29:42.811"/>
+</kw>
+<doc>Esse teste cria a terceira tarefa</doc>
+<tag>tarefa3</tag>
+<status status="PASS" starttime="20220416 20:29:35.267" endtime="20220416 20:29:42.811"/>
+</test>
+<test id="s1-t5" name="Caso de Teste 04 - Criando a quarta tarefa" line="36">
+<kw name="Dado que estou na tela inicial do app" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:42.814" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${BOTAO_ADICIONAR_TAREFA}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:42.816" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabAddTask' ]</msg>
+<msg timestamp="20220416 20:29:42.816" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:43.215" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:43.215" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:43.423" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:44.529" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:44.529" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:44.530" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff0000017e/displayed {"id": "00000000-0000-0191-7fff-ffff0000017e"}</msg>
+<msg timestamp="20220416 20:29:44.545" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff0000017e/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:44.545" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:44.545" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:42.815" endtime="20220416 20:29:44.545"/>
+</kw>
+<msg timestamp="20220416 20:29:44.546" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:42.814" endtime="20220416 20:29:44.546"/>
+</kw>
+<kw name="Quando clicar no botao de adicionar a 4º tarefa &quot;ESTRATÉGIAS DE TESTES&quot;" library="lista_de_tarefas_resources" sourcename="Quando clicar no botao de adicionar a 4º tarefa &quot;${TAREFA4}&quot;">
+<msg timestamp="20220416 20:29:44.547" level="TRACE">Arguments: [ ${TAREFA4}='ESTRATÉGIAS DE TESTES' ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${BOTAO_ADICIONAR_TAREFA}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:44.548" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabAddTask' ]</msg>
+<msg timestamp="20220416 20:29:44.548" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:44.589" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:44.590" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:44.590" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff0000017e/displayed {"id": "00000000-0000-0191-7fff-ffff0000017e"}</msg>
+<msg timestamp="20220416 20:29:44.605" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff0000017e/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:44.606" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:44.606" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:44.547" endtime="20220416 20:29:44.606"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${BOTAO_ADICIONAR_TAREFA}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:44.606" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabAddTask' ]</msg>
+<msg timestamp="20220416 20:29:44.608" level="INFO">Clicking element 'id=com.splendapps.splendo:id/fabAddTask'.</msg>
+<msg timestamp="20220416 20:29:44.608" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:44.626" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:44.627" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:44.627" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff0000017e/click {"id": "00000000-0000-0191-7fff-ffff0000017e"}</msg>
+<msg timestamp="20220416 20:29:44.646" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff0000017e/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:44.647" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:44.647" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:44.606" endtime="20220416 20:29:44.647"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>locator=//android.widget.EditText[@index="0"]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:44.648" level="TRACE">Arguments: [ locator='//android.widget.EditText[@index="0"]' ]</msg>
+<msg timestamp="20220416 20:29:44.648" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.widget.EditText[@index=\"0\"]"}</msg>
+<msg timestamp="20220416 20:29:45.011" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:45.012" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:45.220" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.widget.EditText[@index=\"0\"]"}</msg>
+<msg timestamp="20220416 20:29:46.068" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 267</msg>
+<msg timestamp="20220416 20:29:46.069" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:46.069" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0198-7fff-ffff000001d0/displayed {"id": "00000000-0000-0198-7fff-ffff000001d0"}</msg>
+<msg timestamp="20220416 20:29:46.082" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0198-7fff-ffff000001d0/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:46.082" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:46.082" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:44.648" endtime="20220416 20:29:46.082"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>locator=//android.widget.EditText[@index="0"]</arg>
+<arg>text=${TAREFA4}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:46.083" level="TRACE">Arguments: [ locator='//android.widget.EditText[@index="0"]' | text='ESTRATÉGIAS DE TESTES' ]</msg>
+<msg timestamp="20220416 20:29:46.084" level="INFO">Typing text 'ESTRATÉGIAS DE TESTES' into text field '//android.widget.EditText[@index="0"]'</msg>
+<msg timestamp="20220416 20:29:46.085" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.widget.EditText[@index=\"0\"]"}</msg>
+<msg timestamp="20220416 20:29:46.131" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 267</msg>
+<msg timestamp="20220416 20:29:46.133" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:46.133" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0198-7fff-ffff000001d0/value {"text": "ESTRAT\u00c9GIAS DE TESTES", "value": ["E", "S", "T", "R", "A", "T", "\u00c9", "G", "I", "A", "S", " ", "D", "E", " ", "T", "E", "S", "T", "E", "S"], "id": "00000000-0000-0198-7fff-ffff000001d0"}</msg>
+<msg timestamp="20220416 20:29:47.023" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0198-7fff-ffff000001d0/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:47.024" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:47.025" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:46.083" endtime="20220416 20:29:47.025"/>
+</kw>
+<msg timestamp="20220416 20:29:47.025" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:44.546" endtime="20220416 20:29:47.025"/>
+</kw>
+<kw name="E Definir data" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:47.028" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/btnSetD</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:47.029" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/btnSetD' ]</msg>
+<msg timestamp="20220416 20:29:47.029" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/btnSetD"}</msg>
+<msg timestamp="20220416 20:29:47.803" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:47.803" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:47.803" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0198-7fff-ffff000001d3/displayed {"id": "00000000-0000-0198-7fff-ffff000001d3"}</msg>
+<msg timestamp="20220416 20:29:47.815" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0198-7fff-ffff000001d3/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:47.816" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:47.816" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:47.029" endtime="20220416 20:29:47.816"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/btnSetD</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:47.816" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/btnSetD' ]</msg>
+<msg timestamp="20220416 20:29:47.818" level="INFO">Clicking element 'id=com.splendapps.splendo:id/btnSetD'.</msg>
+<msg timestamp="20220416 20:29:47.818" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/btnSetD"}</msg>
+<msg timestamp="20220416 20:29:47.836" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:47.836" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:47.837" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0198-7fff-ffff000001d3/click {"id": "00000000-0000-0198-7fff-ffff000001d3"}</msg>
+<msg timestamp="20220416 20:29:47.854" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0198-7fff-ffff000001d3/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:47.855" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:47.855" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:47.816" endtime="20220416 20:29:47.855"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=android:id/button1</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:47.856" level="TRACE">Arguments: [ 'id=android:id/button1' ]</msg>
+<msg timestamp="20220416 20:29:47.856" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:29:47.987" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:47.987" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:48.189" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:29:48.766" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:48.766" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:48.766" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0199-7fff-ffff000001dc/displayed {"id": "00000000-0000-0199-7fff-ffff000001dc"}</msg>
+<msg timestamp="20220416 20:29:48.776" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0199-7fff-ffff000001dc/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:48.777" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:48.777" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:47.855" endtime="20220416 20:29:48.777"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>locator=//android.view.View[@index="15"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:48.777" level="TRACE">Arguments: [ locator='//android.view.View[@index="15"]' ]</msg>
+<msg timestamp="20220416 20:29:48.778" level="INFO">Clicking element '//android.view.View[@index="15"]'.</msg>
+<msg timestamp="20220416 20:29:48.779" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.view.View[@index=\"15\"]"}</msg>
+<msg timestamp="20220416 20:29:48.860" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:48.860" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:48.860" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0199-0000-0010000001de/click {"id": "00000000-0000-0199-0000-0010000001de"}</msg>
+<msg timestamp="20220416 20:29:49.481" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0199-0000-0010000001de/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:49.482" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:49.482" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:48.777" endtime="20220416 20:29:49.482"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=android:id/button1</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:49.482" level="TRACE">Arguments: [ 'id=android:id/button1' ]</msg>
+<msg timestamp="20220416 20:29:49.484" level="INFO">Clicking element 'id=android:id/button1'.</msg>
+<msg timestamp="20220416 20:29:49.484" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:29:49.537" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:49.538" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:49.539" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0199-7fff-ffff000001dc/click {"id": "00000000-0000-0199-7fff-ffff000001dc"}</msg>
+<msg timestamp="20220416 20:29:49.556" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0199-7fff-ffff000001dc/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:49.557" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:49.557" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:49.482" endtime="20220416 20:29:49.557"/>
+</kw>
+<msg timestamp="20220416 20:29:49.557" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:47.028" endtime="20220416 20:29:49.557"/>
+</kw>
+<kw name="Então mostre a tarefa finalizada" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:49.558" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/fabSaveTask</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:49.559" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabSaveTask' ]</msg>
+<msg timestamp="20220416 20:29:49.559" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabSaveTask"}</msg>
+<msg timestamp="20220416 20:29:49.870" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:49.871" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:49.871" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0198-7fff-ffff000001b3/displayed {"id": "00000000-0000-0198-7fff-ffff000001b3"}</msg>
+<msg timestamp="20220416 20:29:50.198" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0198-7fff-ffff000001b3/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:50.199" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:50.200" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:49.559" endtime="20220416 20:29:50.200"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/fabSaveTask</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:50.201" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabSaveTask' ]</msg>
+<msg timestamp="20220416 20:29:50.207" level="INFO">Clicking element 'id=com.splendapps.splendo:id/fabSaveTask'.</msg>
+<msg timestamp="20220416 20:29:50.207" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabSaveTask"}</msg>
+<msg timestamp="20220416 20:29:50.237" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:50.237" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:50.238" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0198-7fff-ffff000001b3/click {"id": "00000000-0000-0198-7fff-ffff000001b3"}</msg>
+<msg timestamp="20220416 20:29:50.257" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0198-7fff-ffff000001b3/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:50.258" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:50.258" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:50.200" endtime="20220416 20:29:50.258"/>
+</kw>
+<msg timestamp="20220416 20:29:50.258" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:49.558" endtime="20220416 20:29:50.258"/>
+</kw>
+<doc>Esse teste cria a quarta tarefa</doc>
+<tag>tarefa4</tag>
+<status status="PASS" starttime="20220416 20:29:42.813" endtime="20220416 20:29:50.259"/>
+</test>
+<test id="s1-t6" name="Caso de Teste 05 - Criando a quinta tarefa" line="44">
+<kw name="Dado que estou na tela inicial do app" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:50.262" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${BOTAO_ADICIONAR_TAREFA}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:50.262" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabAddTask' ]</msg>
+<msg timestamp="20220416 20:29:50.262" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:50.327" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:50.328" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:50.543" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:52.146" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:52.147" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:52.147" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000212/displayed {"id": "00000000-0000-0191-7fff-ffff00000212"}</msg>
+<msg timestamp="20220416 20:29:52.159" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000212/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:52.159" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:52.159" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:50.262" endtime="20220416 20:29:52.159"/>
+</kw>
+<msg timestamp="20220416 20:29:52.160" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:50.261" endtime="20220416 20:29:52.160"/>
+</kw>
+<kw name="Quando clicar no botao de adicionar a 5º tarefa &quot;TAREFA A SER EXCLUÍDA&quot;" library="lista_de_tarefas_resources" sourcename="Quando clicar no botao de adicionar a 5º tarefa &quot;${TAREFA5}&quot;">
+<msg timestamp="20220416 20:29:52.161" level="TRACE">Arguments: [ ${TAREFA5}='TAREFA A SER EXCLUÍDA' ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${BOTAO_ADICIONAR_TAREFA}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:52.162" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabAddTask' ]</msg>
+<msg timestamp="20220416 20:29:52.162" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:52.191" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:52.191" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:52.192" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000212/displayed {"id": "00000000-0000-0191-7fff-ffff00000212"}</msg>
+<msg timestamp="20220416 20:29:52.213" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000212/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:52.213" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:52.213" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:52.161" endtime="20220416 20:29:52.213"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${BOTAO_ADICIONAR_TAREFA}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:52.214" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabAddTask' ]</msg>
+<msg timestamp="20220416 20:29:52.216" level="INFO">Clicking element 'id=com.splendapps.splendo:id/fabAddTask'.</msg>
+<msg timestamp="20220416 20:29:52.216" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabAddTask"}</msg>
+<msg timestamp="20220416 20:29:52.242" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:52.243" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:52.243" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000212/click {"id": "00000000-0000-0191-7fff-ffff00000212"}</msg>
+<msg timestamp="20220416 20:29:52.260" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff00000212/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:52.261" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:52.261" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:52.214" endtime="20220416 20:29:52.261"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>locator=//android.widget.EditText[@index="0"]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:52.261" level="TRACE">Arguments: [ locator='//android.widget.EditText[@index="0"]' ]</msg>
+<msg timestamp="20220416 20:29:52.261" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.widget.EditText[@index=\"0\"]"}</msg>
+<msg timestamp="20220416 20:29:52.573" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:52.573" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:52.786" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.widget.EditText[@index=\"0\"]"}</msg>
+<msg timestamp="20220416 20:29:53.724" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 267</msg>
+<msg timestamp="20220416 20:29:53.725" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:53.725" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019a-7fff-ffff00000261/displayed {"id": "00000000-0000-019a-7fff-ffff00000261"}</msg>
+<msg timestamp="20220416 20:29:53.738" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019a-7fff-ffff00000261/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:53.738" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:53.738" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:52.261" endtime="20220416 20:29:53.739"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>locator=//android.widget.EditText[@index="0"]</arg>
+<arg>text=${TAREFA5}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:53.739" level="TRACE">Arguments: [ locator='//android.widget.EditText[@index="0"]' | text='TAREFA A SER EXCLUÍDA' ]</msg>
+<msg timestamp="20220416 20:29:53.740" level="INFO">Typing text 'TAREFA A SER EXCLUÍDA' into text field '//android.widget.EditText[@index="0"]'</msg>
+<msg timestamp="20220416 20:29:53.740" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.widget.EditText[@index=\"0\"]"}</msg>
+<msg timestamp="20220416 20:29:53.785" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 267</msg>
+<msg timestamp="20220416 20:29:53.785" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:53.785" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019a-7fff-ffff00000261/value {"text": "TAREFA A SER EXCLU\u00cdDA", "value": ["T", "A", "R", "E", "F", "A", " ", "A", " ", "S", "E", "R", " ", "E", "X", "C", "L", "U", "\u00cd", "D", "A"], "id": "00000000-0000-019a-7fff-ffff00000261"}</msg>
+<msg timestamp="20220416 20:29:54.642" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019a-7fff-ffff00000261/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:54.642" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:54.642" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:53.739" endtime="20220416 20:29:54.642"/>
+</kw>
+<msg timestamp="20220416 20:29:54.643" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:52.160" endtime="20220416 20:29:54.643"/>
+</kw>
+<kw name="E Definir data" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:54.644" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/btnSetD</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:54.644" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/btnSetD' ]</msg>
+<msg timestamp="20220416 20:29:54.645" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/btnSetD"}</msg>
+<msg timestamp="20220416 20:29:55.400" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:55.401" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:55.401" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019a-7fff-ffff00000264/displayed {"id": "00000000-0000-019a-7fff-ffff00000264"}</msg>
+<msg timestamp="20220416 20:29:55.412" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019a-7fff-ffff00000264/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:55.413" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:55.413" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:54.644" endtime="20220416 20:29:55.413"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/btnSetD</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:55.413" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/btnSetD' ]</msg>
+<msg timestamp="20220416 20:29:55.415" level="INFO">Clicking element 'id=com.splendapps.splendo:id/btnSetD'.</msg>
+<msg timestamp="20220416 20:29:55.415" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/btnSetD"}</msg>
+<msg timestamp="20220416 20:29:55.439" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:55.439" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:55.439" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019a-7fff-ffff00000264/click {"id": "00000000-0000-019a-7fff-ffff00000264"}</msg>
+<msg timestamp="20220416 20:29:55.456" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019a-7fff-ffff00000264/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:55.457" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:55.457" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:55.413" endtime="20220416 20:29:55.457"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=android:id/button1</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:55.458" level="TRACE">Arguments: [ 'id=android:id/button1' ]</msg>
+<msg timestamp="20220416 20:29:55.458" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:29:55.534" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:55.535" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:55.740" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:29:56.311" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:56.311" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:56.311" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019b-7fff-ffff0000026d/displayed {"id": "00000000-0000-019b-7fff-ffff0000026d"}</msg>
+<msg timestamp="20220416 20:29:56.322" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019b-7fff-ffff0000026d/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:56.322" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:56.322" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:55.457" endtime="20220416 20:29:56.322"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>locator=//android.view.View[@index="15"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:56.323" level="TRACE">Arguments: [ locator='//android.view.View[@index="15"]' ]</msg>
+<msg timestamp="20220416 20:29:56.324" level="INFO">Clicking element '//android.view.View[@index="15"]'.</msg>
+<msg timestamp="20220416 20:29:56.325" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.view.View[@index=\"15\"]"}</msg>
+<msg timestamp="20220416 20:29:56.438" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:56.438" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:56.439" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019b-0000-00100000026f/click {"id": "00000000-0000-019b-0000-00100000026f"}</msg>
+<msg timestamp="20220416 20:29:57.064" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019b-0000-00100000026f/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:57.065" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:57.065" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:56.323" endtime="20220416 20:29:57.065"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=android:id/button1</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:57.065" level="TRACE">Arguments: [ 'id=android:id/button1' ]</msg>
+<msg timestamp="20220416 20:29:57.068" level="INFO">Clicking element 'id=android:id/button1'.</msg>
+<msg timestamp="20220416 20:29:57.069" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:29:57.120" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:57.120" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:57.121" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019b-7fff-ffff0000026d/click {"id": "00000000-0000-019b-7fff-ffff0000026d"}</msg>
+<msg timestamp="20220416 20:29:57.136" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019b-7fff-ffff0000026d/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:57.136" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:57.137" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:57.065" endtime="20220416 20:29:57.137"/>
+</kw>
+<msg timestamp="20220416 20:29:57.137" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:54.643" endtime="20220416 20:29:57.137"/>
+</kw>
+<kw name="Então mostre a tarefa finalizada" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:57.138" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/fabSaveTask</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:57.139" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabSaveTask' ]</msg>
+<msg timestamp="20220416 20:29:57.139" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabSaveTask"}</msg>
+<msg timestamp="20220416 20:29:57.250" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:57.251" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:57.457" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabSaveTask"}</msg>
+<msg timestamp="20220416 20:29:57.786" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:57.787" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:57.787" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019a-7fff-ffff00000244/displayed {"id": "00000000-0000-019a-7fff-ffff00000244"}</msg>
+<msg timestamp="20220416 20:29:57.798" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019a-7fff-ffff00000244/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:57.798" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:57.799" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:57.138" endtime="20220416 20:29:57.799"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/fabSaveTask</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:57.799" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/fabSaveTask' ]</msg>
+<msg timestamp="20220416 20:29:57.801" level="INFO">Clicking element 'id=com.splendapps.splendo:id/fabSaveTask'.</msg>
+<msg timestamp="20220416 20:29:57.801" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/fabSaveTask"}</msg>
+<msg timestamp="20220416 20:29:57.819" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:57.820" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:57.820" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019a-7fff-ffff00000244/click {"id": "00000000-0000-019a-7fff-ffff00000244"}</msg>
+<msg timestamp="20220416 20:29:57.838" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019a-7fff-ffff00000244/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:57.839" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:57.839" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:57.799" endtime="20220416 20:29:57.839"/>
+</kw>
+<msg timestamp="20220416 20:29:57.839" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:57.138" endtime="20220416 20:29:57.839"/>
+</kw>
+<kw name="E Então exclua a tarefa" library="lista_de_tarefas_resources">
+<msg timestamp="20220416 20:29:57.840" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>locator=//android.widget.TextView[@text="TAREFA A SER EXCLUÍDA"]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:29:57.841" level="TRACE">Arguments: [ locator='//android.widget.TextView[@text="TAREFA A SER EXCLUÍDA"]' ]</msg>
+<msg timestamp="20220416 20:29:57.841" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.widget.TextView[@text=\"TAREFA A SER EXCLU\u00cdDA\"]"}</msg>
+<msg timestamp="20220416 20:29:57.946" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:29:57.948" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:58.149" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.widget.TextView[@text=\"TAREFA A SER EXCLU\u00cdDA\"]"}</msg>
+<msg timestamp="20220416 20:29:59.556" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:59.556" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:59.557" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff000002d1/displayed {"id": "00000000-0000-0191-7fff-ffff000002d1"}</msg>
+<msg timestamp="20220416 20:29:59.566" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff000002d1/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:29:59.567" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:59.567" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:57.841" endtime="20220416 20:29:59.567"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>locator=//android.widget.TextView[@text="TAREFA A SER EXCLUÍDA"]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:29:59.567" level="TRACE">Arguments: [ locator='//android.widget.TextView[@text="TAREFA A SER EXCLUÍDA"]' ]</msg>
+<msg timestamp="20220416 20:29:59.570" level="INFO">Clicking element '//android.widget.TextView[@text="TAREFA A SER EXCLUÍDA"]'.</msg>
+<msg timestamp="20220416 20:29:59.571" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "xpath", "value": "//android.widget.TextView[@text=\"TAREFA A SER EXCLU\u00cdDA\"]"}</msg>
+<msg timestamp="20220416 20:29:59.640" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:29:59.640" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:29:59.641" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff000002d1/click {"id": "00000000-0000-0191-7fff-ffff000002d1"}</msg>
+<msg timestamp="20220416 20:30:01.227" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-0191-7fff-ffff000002d1/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:30:01.228" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:30:01.228" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:59.567" endtime="20220416 20:30:01.229"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/action_delete_task</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:30:01.229" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/action_delete_task' ]</msg>
+<msg timestamp="20220416 20:30:01.230" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/action_delete_task"}</msg>
+<msg timestamp="20220416 20:30:01.264" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:30:01.264" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:30:01.264" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019c-7fff-ffff000002e9/displayed {"id": "00000000-0000-019c-7fff-ffff000002e9"}</msg>
+<msg timestamp="20220416 20:30:01.276" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019c-7fff-ffff000002e9/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:30:01.277" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:30:01.277" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:30:01.229" endtime="20220416 20:30:01.277"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.splendapps.splendo:id/action_delete_task</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:30:01.277" level="TRACE">Arguments: [ 'id=com.splendapps.splendo:id/action_delete_task' ]</msg>
+<msg timestamp="20220416 20:30:01.279" level="INFO">Clicking element 'id=com.splendapps.splendo:id/action_delete_task'.</msg>
+<msg timestamp="20220416 20:30:01.279" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "com.splendapps.splendo:id/action_delete_task"}</msg>
+<msg timestamp="20220416 20:30:01.298" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:30:01.299" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:30:01.299" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019c-7fff-ffff000002e9/click {"id": "00000000-0000-019c-7fff-ffff000002e9"}</msg>
+<msg timestamp="20220416 20:30:01.316" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019c-7fff-ffff000002e9/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:30:01.316" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:30:01.317" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:30:01.277" endtime="20220416 20:30:01.317"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>id=android:id/button1</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20220416 20:30:01.317" level="TRACE">Arguments: [ 'id=android:id/button1' ]</msg>
+<msg timestamp="20220416 20:30:01.318" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:30:01.445" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220416 20:30:01.446" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:30:01.652" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:30:02.021" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:30:02.021" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:30:02.022" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019d-7fff-ffff0000031d/displayed {"id": "00000000-0000-019d-7fff-ffff0000031d"}</msg>
+<msg timestamp="20220416 20:30:02.034" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019d-7fff-ffff0000031d/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:30:02.034" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:30:02.034" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:30:01.317" endtime="20220416 20:30:02.035"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=android:id/button1</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220416 20:30:02.035" level="TRACE">Arguments: [ 'id=android:id/button1' ]</msg>
+<msg timestamp="20220416 20:30:02.037" level="INFO">Clicking element 'id=android:id/button1'.</msg>
+<msg timestamp="20220416 20:30:02.037" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements {"using": "id", "value": "android:id/button1"}</msg>
+<msg timestamp="20220416 20:30:02.057" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220416 20:30:02.057" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:30:02.057" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019d-7fff-ffff0000031d/click {"id": "00000000-0000-019d-7fff-ffff0000031d"}</msg>
+<msg timestamp="20220416 20:30:02.072" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/1d8a6642-7bb1-42ed-be2c-2215cee7d3dd/element/00000000-0000-019d-7fff-ffff0000031d/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220416 20:30:02.072" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220416 20:30:02.072" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:30:02.035" endtime="20220416 20:30:02.072"/>
+</kw>
+<msg timestamp="20220416 20:30:02.072" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220416 20:29:57.840" endtime="20220416 20:30:02.073"/>
+</kw>
+<doc>Esse teste cria a quarta tarefa</doc>
+<tag>tarefa5</tag>
+<status status="PASS" starttime="20220416 20:29:50.260" endtime="20220416 20:30:02.074"/>
+</test>
+<doc>Essa suíte testa o app de lista de tarefas</doc>
+<status status="PASS" starttime="20220416 20:29:06.669" endtime="20220416 20:30:02.076"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Abrir_app</stat>
+<stat pass="1" fail="0" skip="0">tarefa1</stat>
+<stat pass="1" fail="0" skip="0">tarefa2</stat>
+<stat pass="1" fail="0" skip="0">tarefa3</stat>
+<stat pass="1" fail="0" skip="0">tarefa4</stat>
+<stat pass="1" fail="0" skip="0">tarefa5</stat>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Lista De Tarefas Test">Lista De Tarefas Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
