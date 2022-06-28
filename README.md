@@ -1,5 +1,5 @@
 # Automação mobile do app Lista de tarefas
-Essa automação Valida de forma funcional as criações e exclusões de tarefas.
+Essa automação em Robot Valida de forma funcional as criações e exclusões de tarefas.
 
 ### Status do projeto: 🟢 Concluído... 🟢
 
